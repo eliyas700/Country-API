@@ -11,9 +11,17 @@ const displayData= countries=>{
 }
 const getCountryHtml=country=>{
     console.log(country.flags.png)
+    // Option-2 Destructuring
+    const {name, flag}=country;
     return `
     <div class="country">
-        <h5>Name:${country.name}</h5>
-        <img width="240px" src="${country.flag}"></div>`
+        <h5>Name:${name}</h5>
+        <img width="240px" src="${flag}"></div>`
 }
+/* Option-1  */
+//     return `
+//     <div class="country">
+//         <h5>Name:${country.name}</h5>
+//         <img width="240px" src="${country.flag}"></div>`
+// }
 loadData()
