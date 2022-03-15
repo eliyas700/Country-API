@@ -13,7 +13,7 @@ const getCountryHtml=country=>{
     console.log(country.flags.png)
     return `
     <div class="country">
-        <h1>Name:${country.name}</h1>
-        <img src="${country.flag}"></div>`
+        <h5>Name:${country.name}</h5>
+        <img width="240px" src="${country.flag}"></div>`
 }
 loadData()
