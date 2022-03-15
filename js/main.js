@@ -1,3 +1,19 @@
-fetch('https://restcountries.com/v2/all')
+const loadData=()=>{
+    fetch('https://restcountries.com/v2/all')
 .then(res=>res.json())
-.then(data=>console.log(data))
+.then(data=>displayData(data))
+}
+const display=document.getElementById("countries")
+const displayData= countries=>{
+    const countryHtml=countries.map(country=> getCountryHtml(country))
+    display.innerHTML=countryHtml.join(' ');
+
+}
+const getCountryHtml=country=>{
+    console.log(country.flags.png)
+    return `
+    <div class="country">
+        <h1>Name:${country.name}</h1>
+        <img src="${country.flag}"></div>`
+}
+loadData()
