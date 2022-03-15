@@ -51,6 +51,20 @@ const loadSpecificCountry=()=>{
 }
 const searchedCountry=document.getElementById('single-country')
 const displayCountry=country=>{
-    console.log(country[0])
+    searchedCountry.textContent=''
+    const singleCountry= country[0]
+    console.log(singleCountry)
+    console.log(country[0].name.common)
+    const {name,nativeName,population,region,capital,area,flags}=country[0];
+    const div = document.createElement('div')
+    div.classList.add='country-detail'
+    div.innerHTML=`
+        <h4>Name:${name.common}</h4>
+        <p>Native Name:${name.official}</p>
+        <p>Population:${population}</p>
+        <small> Region:${region} Capital: ${capital}, Area:${area}</small>
+        <img width="240px" src="${flags.svg}">
+    `
+    searchedCountry.appendChild(div)
 }
 loadData()
