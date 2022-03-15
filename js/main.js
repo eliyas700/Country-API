@@ -39,4 +39,18 @@ const getCountryHtml=({name, flag,capital,area,region})=>{
         <img width="240px" src="${flag}"></div>`
 }
 
+/* loadSpecificCountry */
+    const countryName=document.getElementById('country-name')
+const loadSpecificCountry=()=>{
+    const country =countryName.value;
+    const url=`https://restcountries.com/v3.1/name/${country}`
+    fetch(url)
+    .then(res =>res.json())
+    .then(data=>displayCountry(data))
+    countryName.value='';
+}
+const searchedCountry=document.getElementById('single-country')
+const displayCountry=country=>{
+    console.log(country[0])
+}
 loadData()
